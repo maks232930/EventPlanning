@@ -19,38 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5079ba94-8bb3-4784-bfce-d1ffe51642d9" name="Default Changelist" comment="Register and login ready">
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_user_unique_email-0.1.1-py3.6.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_user_unique_email-0.1.1-py3.6.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_user_unique_email-0.1.1-py3.6.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_user_unique_email-0.1.1-py3.6.egg-info/installed-files.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/django_user_unique_email-0.1.1-py3.6.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/tests/old_settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/tests/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/management/commands/migrate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/migrations/0002_unique_email.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/migrations/0003_auto_20201113_2335.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/user_unique_email/models.py" afterDir="false" />
+    <list default="true" id="5079ba94-8bb3-4784-bfce-d1ffe51642d9" name="Default Changelist" comment="login ready">
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0002_auto_20201114_0105.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0003_auto_20201114_0128.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/11/14/blog-post-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/11/14/blog-post-03.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0002_auto_20201113_1515.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0003_auto_20201113_1517.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations/0004_auto_20201113_1519.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProjectBlog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProjectBlog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/_header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +121,7 @@
       <workItem from="1605056471432" duration="2580000" />
       <workItem from="1605267470530" duration="4379000" />
       <workItem from="1605271868644" duration="1698000" />
-      <workItem from="1605287579946" duration="13209000" />
+      <workItem from="1605287579946" duration="18038000" />
     </task>
     <task id="LOCAL-00001" summary="Пойдет">
       <created>1604779204011</created>
@@ -154,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605292492385</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="login ready">
+      <created>1605302227660</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605302227660</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +169,8 @@
     </ignored-roots>
     <MESSAGE value="Пойдет" />
     <MESSAGE value="Register and login ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register and login ready" />
+    <MESSAGE value="login ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="login ready" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604596012687">

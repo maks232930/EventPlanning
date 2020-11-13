@@ -1,7 +1,6 @@
 from captcha.fields import CaptchaField
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
 from .models import Ticket, Comment
@@ -12,11 +11,14 @@ class TicketForm(forms.ModelForm):
 
     class Meta:
         model = Ticket
-        fields = ['name', 'surname', 'email', 'phone_number', 'event', 'captcha']
+        fields = ['name', 'surname', 'email', 'event', 'captcha']
         readonly_fields = ('published_date',)
 
         widgets = {
-            'event': forms.HiddenInput()
+            'event': forms.HiddenInput(),
+            'name': forms.HiddenInput(),
+            'surname': forms.HiddenInput(),
+            'email': forms.HiddenInput()
         }
 
 
@@ -25,11 +27,14 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['name', 'email', 'subject', 'content', 'event', 'captcha']
+        fields = ['name', 'email', 'surname', 'content', 'event', 'captcha']
         readonly_fields = ('published_date',)
 
         widgets = {
-            'event': forms.HiddenInput()
+            'event': forms.HiddenInput(),
+            'email': forms.HiddenInput(),
+            'surname': forms.HiddenInput(),
+            'name': forms.HiddenInput(),
         }
 
 

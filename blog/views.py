@@ -1,13 +1,13 @@
 import datetime
+
 from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 from django.db.models import F
-from django.utils import timezone
-from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
+
 from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm
 from .models import *
-from django.contrib import messages
 
 
 class HomeListView(ListView):
@@ -72,33 +72,37 @@ class AllPostsListView(ListView):
 
 def view_news(request, slug):
     news_item = Event.objects.get(slug=slug)
-    if news_item.the_date_of_the < timezone.now():
+    if request.user.is_authenticated:
+        tickets = Ticket.objects.filter(user=request.user, event=news_item)
+    if news_item.the_date_of_the <= timezone.now():
         if request.method == 'POST':
             form = CommentForm(data=request.POST)
             if form.is_valid():
                 response = form.save(commit=False)
                 response.event = news_item
+                response.email = request.user.email
+                response.name = request.user.first_name
+                response.surname = request.user.last_name
                 response.save()
-                messages.success(request, "Вы успешно зарегистрировались")
-                redirect('home')
-            else:
-                messages.success(request, "Вы успешно не зарегистрировались")
+                # redirect('home')
         comments = news_item.comment_set.all()
         form = CommentForm()
         return render(request, 'blog/post_detail.html', {'post': news_item, 'form': form, 'comments': comments})
-    elif news_item.the_date_of_the > timezone.now() and news_item.tickets_left != 0:
+    elif news_item.the_date_of_the > timezone.now() and news_item.tickets_left != 0 and request.user.is_authenticated and not tickets:
         if request.method == 'POST':
             form = TicketForm(initial={'event': news_item}, data=request.POST)
             if form.is_valid():
                 response = form.save(commit=False)
                 news_item.tickets_left = F('tickets_left') - 1
                 news_item.save()
+                response.user = request.user
                 response.event = news_item
+                response.name = request.user.first_name
+                response.surname = request.user.last_name
+                response.email = request.user.email
                 response.save()
-                messages.success(request, "Вы успешно зарегистрировались")
-                return redirect('home')
-            else:
-                messages.success(request, "Вы успешно не зарегистрировались")
+                return redirect('profile')
+
         form = TicketForm()
         return render(request, 'blog/post_detail.html', {'post': news_item, 'form': form})
 
@@ -200,3 +204,9 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('home')
+
+
+@login_required
+def profile(request):
+    events = Ticket.objects.filter(user=request.user)
+    return render(request, 'blog/profile.html', {'events': events})

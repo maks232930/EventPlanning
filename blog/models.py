@@ -87,13 +87,12 @@ class Event(models.Model):
 
 class Ticket(models.Model):
     """Модель билетов"""
-    email = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
-    name = models.CharField('Имя', max_length=20)
-    surname = models.CharField('Фамилия', max_length=20)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
+    name = models.CharField('Имя', max_length=20, blank=True)
+    surname = models.CharField('Фамилия', max_length=20, blank=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Мероприятие', blank=True)
-    # email = models.EmailField()
+    email = models.EmailField(blank=True)
     published_date = models.DateTimeField('Дата регистрации', auto_now_add=True, blank=True)
-    phone_number = models.CharField('Номер телефона', max_length=17)
 
     def __str__(self):
         return f'Гость {self.name} идет на {self.event}'
@@ -106,11 +105,11 @@ class Ticket(models.Model):
 
 class Comment(models.Model):
     """Модель комментариев"""
-    name = models.CharField('Имя', max_length=50)
-    subject = models.CharField('Тема', max_length=20)
+    name = models.CharField('Имя', max_length=50, blank=True)
+    surname = models.CharField('Фамилия', max_length=50, blank=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Мероприятие', blank=True)
     content = models.TextField('Текст комментария', max_length=5000)
-    email = models.EmailField()
+    email = models.EmailField(blank=True)
     published_date = models.DateTimeField('Дата публикации', auto_now_add=True, blank=True)
 
     def __str__(self):

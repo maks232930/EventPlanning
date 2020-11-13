@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block banner %}
+    <div class="heading-page header-text">
+        <section class="page-heading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-content">
+                            <h2>Hello, {{ request.user.first_name }} {{ request.user.last_name }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-lg-4">
+        <div class="col-lg-15 center-block">
+            <div class="sidebar-item submit-comment">
+                <div class="content">
+                    <div class="list-group">
+                        {% for event in events %}
+                        <a href="{{ event.event.get_absolute_url }}" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ event.event.title }}</h5>
+                                <small>{{ event.event.the_date_of_the }}</small>
+                            </div>
+                            <p class="mb-1">{{ event.event.mini_text }}</p>
+                            <small>Category: {{ event.event.category }}</small>
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

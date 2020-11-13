@@ -55,19 +55,19 @@ class EventAdmin(admin.ModelAdmin):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'event', 'phone_number', 'email', 'published_date')
+    list_display = ('name', 'surname', 'event', 'email', 'published_date')
     list_display_links = ('name', 'surname', 'event')
     list_filter = ('event', 'email')
-    search_fields = ('name', 'surname', 'event', 'phone_number', 'email')
+    search_fields = ('name', 'surname', 'event', 'email')
     save_as = True
     save_on_top = True
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'subject', 'event', 'content', 'email', 'published_date')
-    list_display_links = ('name', 'subject', 'event')
+    list_display = ('name', 'surname', 'event', 'content', 'email', 'published_date')
+    list_display_links = ('name', 'surname', 'event')
     list_filter = ('event',)
-    search_fields = ('name', 'subject', 'event', 'content', 'email')
+    search_fields = ('name', 'surname', 'event', 'content', 'email')
     save_as = True
     save_on_top = True
 
