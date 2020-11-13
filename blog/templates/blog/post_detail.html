@@ -93,82 +93,84 @@
                                     </div>
                                 </div>
                             {% endif %}
-                            {% if form.surname %}
-                                <div class="col-lg-12">
-                                    <div class="sidebar-item submit-comment">
-                                        <div class="sidebar-heading">
-                                            <h2>Get a ticket</h2>
-                                        </div>
+                            {% if request.user.is_authenticated %}
+                                {% if form.surname %}
+                                    <div class="col-lg-12">
+                                        <div class="sidebar-item submit-comment">
+                                            <div class="sidebar-heading">
+                                                <h2>Get a ticket</h2>
+                                            </div>
                                             <div class="content">
-                                            <form id="comment" action="{{ post.get_absolute_url }}" method="post">
-                                                {% csrf_token %}
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12">
-                                                        {{ form.name|as_crispy_field }}
+                                                <form id="comment" action="{{ post.get_absolute_url }}" method="post">
+                                                    {% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-12">
+                                                            {{ form.name|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-12">
+                                                            {{ form.surname|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form.email|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            {{ form.phone_number|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            {{ form.event|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            {{ form.captcha|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <button type="submit" id="form-submit" class="main-button">
+                                                                Submit
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-6 col-sm-12">
-                                                        {{ form.surname|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12">
-                                                        {{ form.email|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        {{ form.phone_number|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        {{ form.event|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        {{ form.captcha|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <button type="submit" id="form-submit" class="main-button">
-                                                            Submit
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            {% elif form.content %}
-                                <div class="col-lg-12">
-                                    <div class="sidebar-item submit-comment">
-                                        <div class="sidebar-heading">
-                                            <h2>Your comment</h2>
-                                        </div>
-                                        <div class="content">
-                                            <form id="comment" action="{{ post.get_absolute_url }}" method="post">
-                                                {% csrf_token %}
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12">
-                                                        {{ form.name|as_crispy_field }}
+                                {% elif form.content %}
+                                    <div class="col-lg-12">
+                                        <div class="sidebar-item submit-comment">
+                                            <div class="sidebar-heading">
+                                                <h2>Your comment</h2>
+                                            </div>
+                                            <div class="content">
+                                                <form id="comment" action="{{ post.get_absolute_url }}" method="post">
+                                                    {% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-12">
+                                                            {{ form.name|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-12">
+                                                            {{ form.email|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form.subject|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            {{ form.content|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            {{ form.event|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            {{ form.captcha|as_crispy_field }}
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <button type="submit" id="form-submit" class="main-button">
+                                                                Submit
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-6 col-sm-12">
-                                                        {{ form.email|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12">
-                                                        {{ form.subject|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        {{ form.content|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        {{ form.event|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        {{ form.captcha|as_crispy_field }}
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <button type="submit" id="form-submit" class="main-button">
-                                                            Submit
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% endif %}
                             {% endif %}
 
                         </div>

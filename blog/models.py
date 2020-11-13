@@ -87,10 +87,11 @@ class Event(models.Model):
 
 class Ticket(models.Model):
     """Модель билетов"""
+    email = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
     name = models.CharField('Имя', max_length=20)
     surname = models.CharField('Фамилия', max_length=20)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Мероприятие', blank=True)
-    email = models.EmailField()
+    # email = models.EmailField()
     published_date = models.DateTimeField('Дата регистрации', auto_now_add=True, blank=True)
     phone_number = models.CharField('Номер телефона', max_length=17)
 
@@ -113,7 +114,7 @@ class Comment(models.Model):
     published_date = models.DateTimeField('Дата публикации', auto_now_add=True, blank=True)
 
     def __str__(self):
-        return f'Автор {self.name} пост {self.event}'
+        return f'Автор {self.name} мероприятие {self.event}'
 
     class Meta:
         verbose_name = 'Комментарий'

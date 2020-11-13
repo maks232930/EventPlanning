@@ -31,10 +31,10 @@
                                 {{ form.email|as_crispy_field }}
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                {{ form.name|as_crispy_field }}
+                                {{ form.first_name|as_crispy_field }}
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                {{ form.surname|as_crispy_field }}
+                                {{ form.last_name|as_crispy_field }}
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 {{ form.password1|as_crispy_field }}
@@ -43,15 +43,15 @@
                                 {{ form.password2|as_crispy_field }}
                             </div>
                             <div class="col-lg-12">
-                                <button type="submit" id="form-submit" class="main-button">
+                                <button type="submit" id="form-submit" class="btn btn-outline-primary">
                                     Register
                                 </button>
                             </div>
                         </div>
                     </form>
-                    <div class="errorlist">
-                        {{ form.errors }}
-                    </div>
+{#                    <div class="errorlist">#}
+{#                        {{ form.errors }}#}
+{#                    </div>#}
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import datetime
 from django.contrib.auth import login, logout
 from django.db.models import F
 from django.utils import timezone
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView
 from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm
@@ -185,8 +186,7 @@ def user_login(request):
     if request.user.is_authenticated:
         return redirect('home')
     if request.method == 'POST':
-        form = UserLoginForm(request.POST)
-
+        form = UserLoginForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)

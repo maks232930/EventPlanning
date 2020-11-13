@@ -31,14 +31,17 @@
                                 {{ form.password|as_crispy_field }}
                             </div>
                             <div class="col-lg-12">
-                                <button type="submit" id="form-submit" class="main-button">
+                                <button type="submit" id="form-submit" class="btn btn-outline-primary">
                                     Login
                                 </button>
                             </div>
                         </div>
                     </form>
                     <div class="errorlist">
-                        {{ form.errors }}
+                        {% for f in form.non_field_errors  %}
+                            <li>{{ f }}</li>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
