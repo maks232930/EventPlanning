@@ -1,10 +1,10 @@
 import datetime
-
+from django.contrib.auth import login, logout
 from django.db.models import F
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView
-from .forms import TicketForm, CommentForm
+from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm
 from .models import *
 from django.contrib import messages
 
@@ -163,3 +163,40 @@ class Search(ListView):
             .select_related('category', 'author') \
             .prefetch_related('tags')
         return object_list
+
+
+def register(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserRegisterForm()
+
+    return render(request, 'blog/register.html', {'form': form})
+
+
+def user_login(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserLoginForm()
+
+    return render(request, 'blog/login.html', {'form': form})
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
