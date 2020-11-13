@@ -1,0 +1,15 @@
+<div class="sidebar-item recent-posts">
+    <div class="sidebar-heading">
+        <h2>Recent Events</h2>
+    </div>
+    <div class="content">
+        <ul>
+            {% for post in posts %}
+                <li><a href="{{ post.get_absolute_url }}">
+                    <h5>{{ post.title }}</h5>
+                    <span>{{ post.published_date }}</span>
+                </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
