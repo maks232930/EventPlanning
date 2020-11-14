@@ -6,6 +6,7 @@ django-debug-toolbar==2.2
 django-js-asset==1.2.2
 django-ranged-response==0.2.0
 django-simple-captcha==0.5.12
+django-user-unique-email==0.1.1
 mysqlclient==2.0.1
 Pillow==7.2.0
 pytz==2020.1
