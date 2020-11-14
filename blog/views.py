@@ -4,10 +4,11 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import F
 from django.shortcuts import render, redirect
+from django.utils import timezone
 from django.views.generic import ListView
 
 from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm
-from .models import *
+from .models import Event, Ticket
 
 
 class HomeListView(ListView):
