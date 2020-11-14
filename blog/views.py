@@ -88,7 +88,7 @@ def view_news(request, slug):
         comments = news_item.comment_set.all()
         form = CommentForm()
         return render(request, 'blog/post_detail.html', {'post': news_item, 'form': form, 'comments': comments})
-    elif news_item.the_date_of_the > timezone.now() and news_item.tickets_left != 0 and request.user.is_authenticated and not tickets:
+    elif news_item.the_date_of_the >= timezone.now() and news_item.tickets_left != 0 and request.user.is_authenticated and not tickets:
         if request.method == 'POST':
             form = TicketForm(initial={'event': news_item}, data=request.POST)
             if form.is_valid():

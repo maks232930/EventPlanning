@@ -3,7 +3,13 @@ from django import forms
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Category, Ticket, Event, Tag, Comment
+from .models import Category, Ticket, Event, Tag, Comment, SocialLink
+
+
+class SocialLinkAdmin(admin.StackedInline):
+    model = SocialLink
+    extra = 1
+    show_change_link = True
 
 
 class TagAdmin(admin.ModelAdmin):
@@ -39,6 +45,7 @@ class EventAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content')
     readonly_fields = ('get_photo', 'views', 'author', 'tickets_left')
     prepopulated_fields = {'slug': ('title',)}
+    inlines = [SocialLinkAdmin]
     save_as = True
     save_on_top = True
 
@@ -50,7 +57,8 @@ class EventAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         obj.author = request.user
-        obj.tickets_left = obj.number_tickets
+        count_ticket = Ticket.objects.filter(event=obj).count()
+        obj.tickets_left = obj.number_tickets - count_ticket
         super().save_model(request, obj, form, change)
 
 

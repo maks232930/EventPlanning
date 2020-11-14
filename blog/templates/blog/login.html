@@ -2,8 +2,8 @@
 {% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
 {% block banner %}
-    <div class="heading-page header-text">
-        <section class="page-heading">
+    <div class="heading-page header-text" style="margin: 0; flex: 1 0 auto" >
+        <section class="page-heading" style="margin: 0;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -17,13 +17,13 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div class="container mt-lg-4">
+    <div class="container mt-5" style="flex: 1 0 auto">
         <div class="col-lg-15 center-block">
             <div class="sidebar-item submit-comment">
                 <div class="content">
                     <form action="" method="post">
                         {% csrf_token %}
-                        <div class="row">
+                        <div class="col">
                             <div class="col-md-6 col-sm-12">
                                 {{ form.username|as_crispy_field }}
                             </div>

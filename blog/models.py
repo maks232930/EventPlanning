@@ -39,6 +39,19 @@ class Tag(models.Model):
         ordering = ['name']
 
 
+class SocialLink(models.Model):
+    name = models.CharField("Имя соцсети", max_length=15)
+    link = models.URLField('Ссылка на соцсеть')
+    event = models.ForeignKey('Event', on_delete=models.CASCADE, verbose_name='Мероприятие')
+
+    def __str__(self):
+        return f'{self.name} {self.link}'
+
+    class Meta:
+        verbose_name = "Соцсеть"
+        verbose_name_plural = "Соцсети"
+
+
 class Event(models.Model):
     """Модель мероприятия"""
     author = models.ForeignKey(

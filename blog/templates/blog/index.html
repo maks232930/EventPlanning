@@ -30,14 +30,14 @@
 
     <section class="blog-posts">
         <div class="container">
-{#            {% if messages %}#}
-{#                {% for message in messages %}#}
-{#                    <div class="col-lg-8">#}
-{#                    <div class="alert alert-danger" role="alert">#}
-{#                    </div>#}
-{#                    {{ message }}#}
-{#                {% endfor %}#}
-{#            {% endif %}#}
+            {#            {% if messages %}#}
+            {#                {% for message in messages %}#}
+            {#                    <div class="col-lg-8">#}
+            {#                    <div class="alert alert-danger" role="alert">#}
+            {#                    </div>#}
+            {#                    {{ message }}#}
+            {#                {% endfor %}#}
+            {#            {% endif %}#}
             <div class="row">
                 <div class="col-lg-8">
                     <div class="all-blog-posts">
@@ -53,7 +53,7 @@
                                             <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                             <ul class="post-info">
                                                 <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
-                                                <li><a href="{{ post.get_absolute_url }}">{{ post.published_date }}</a>
+                                                <li><a href="{{ post.get_absolute_url }}">{{ post.the_date_of_the }}</a>
                                                 <li>
                                                     <a href="{{ post.get_absolute_url }}">Осталось: {{ post.tickets_left }}</a>
                                                 </li>
@@ -81,8 +81,17 @@
                                                     <div class="col-6">
                                                         <ul class="post-share">
                                                             <li><i class="fa fa-share-alt"></i></li>
-                                                            <li><a href="#">Facebook</a>,</li>
-                                                            <li><a href="#"> Twitter</a></li>
+                                                            {% for social in post.sociallink_set.all %}
+                                                                {% if post.sociallink_set.count == forloop.counter %}
+                                                                    <li>
+                                                                        <a href="{{ social.link }}">{{ social.name }}</a>
+                                                                    </li>
+                                                                {% else %}
+                                                                    <li>
+                                                                        <a href="{{ social.link }}">{{ social.name }}</a>,
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -102,6 +111,6 @@
                 </div>
                 {% include 'inc/_sidebar.html' %}
             </div>
-            </div>
+        </div>
     </section>
 {% endblock content %}

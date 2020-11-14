@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block banner %}
-    <div class="heading-page header-text">
-        <section class="page-heading">
+    <div class="heading-page header-text" style="
+    flex: 1 0 auto;
+">
+        <section class="page-heading" style="margin: 0">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -17,11 +19,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-lg-4">
+    <div class="container mt-lg-4" style="flex: 1 0 auto">
         <div class="col-lg-15 center-block">
             <div class="sidebar-item submit-comment">
                 <div class="content">
-                <h2 class="h2">List of events</h2>
+                    <h2 class="h2">List of events</h2>
                     <div class="list-group">
                         {% for event in events %}
                             <a href="{{ event.event.get_absolute_url }}" class="list-group-item list-group-item-action">
@@ -33,17 +35,19 @@
                                 <small>Category: {{ event.event.category }}</small><br>
                                 <small>Tags: {% for i in event.event.get_tags %}
                                     {% if event.event.get_tags.count == forloop.counter %}
-                                    {{ i }}
+                                        {{ i }}
                                     {% else %} {{ i }},
                                     {% endif %}
                                 {% endfor %}</small>
                             </a>
-                            {% empty %}
+                        {% empty %}
                             <div class="mb-auto">
-                            <h1>You have no tickets</h1>
+                                <h1>You have no tickets</h1>
                             </div>
 
                         {% endfor %}
+
+
 
                     </div>
                 </div>
