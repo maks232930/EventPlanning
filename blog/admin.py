@@ -64,10 +64,10 @@ class TicketAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'event', 'content', 'email', 'published_date')
-    list_display_links = ('name', 'surname', 'event')
+    list_display = ('name', 'last_name', 'event', 'content', 'email', 'published_date')
+    list_display_links = ('name', 'last_name', 'event')
     list_filter = ('event',)
-    search_fields = ('name', 'surname', 'event', 'content', 'email')
+    search_fields = ('name', 'last_name', 'event', 'content', 'email')
     save_as = True
     save_on_top = True
 

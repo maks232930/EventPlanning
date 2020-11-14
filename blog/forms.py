@@ -27,13 +27,13 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['name', 'email', 'surname', 'content', 'event', 'captcha']
+        fields = ['name', 'email', 'last_name', 'content', 'event', 'captcha']
         readonly_fields = ('published_date',)
 
         widgets = {
             'event': forms.HiddenInput(),
             'email': forms.HiddenInput(),
-            'surname': forms.HiddenInput(),
+            'last_name': forms.HiddenInput(),
             'name': forms.HiddenInput(),
         }
 

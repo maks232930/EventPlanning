@@ -21,16 +21,28 @@
         <div class="col-lg-15 center-block">
             <div class="sidebar-item submit-comment">
                 <div class="content">
+                <h2 class="h2">List of events</h2>
                     <div class="list-group">
                         {% for event in events %}
-                        <a href="{{ event.event.get_absolute_url }}" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">{{ event.event.title }}</h5>
-                                <small>{{ event.event.the_date_of_the }}</small>
+                            <a href="{{ event.event.get_absolute_url }}" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ event.event.title }}</h5>
+                                    <small>{{ event.event.the_date_of_the }}</small>
+                                </div>
+                                <p class="mb-1">{{ event.event.mini_text }}</p>
+                                <small>Category: {{ event.event.category }}</small><br>
+                                <small>Tags: {% for i in event.event.get_tags %}
+                                    {% if event.event.get_tags.count == forloop.counter %}
+                                    {{ i }}
+                                    {% else %} {{ i }},
+                                    {% endif %}
+                                {% endfor %}</small>
+                            </a>
+                            {% empty %}
+                            <div class="mb-auto">
+                            <h1>You have no tickets</h1>
                             </div>
-                            <p class="mb-1">{{ event.event.mini_text }}</p>
-                            <small>Category: {{ event.event.category }}</small>
-                        </a>
+
                         {% endfor %}
 
                     </div>

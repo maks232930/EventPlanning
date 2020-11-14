@@ -79,9 +79,9 @@
                                                 {% for comment in comments %}
                                                     <li>
                                                         <div class="right-content" style="margin-left: 0">
-                                                            <h4>{{ comment.name }}<span>{{ comment.published_date }}</span>
+                                                            <h4>{{ comment.name }} {{ comment.last_name }}<span>{{ comment.published_date }}</span>
                                                             </h4>
-                                                            <p>{{ comment.content }}</p>
+                                                            <p style="display: block; word-wrap: break-word;">{{ comment.content }}</p>
 
                                                         </div>
                                                     </li>
@@ -129,21 +129,21 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% elif form.content %}
+                                {% elif form.content and form.last_name %}
                                     <div class="col-lg-12">
                                         <div class="sidebar-item submit-comment">
                                             <div class="sidebar-heading">
                                                 <h2>Your comment</h2>
                                             </div>
                                             <div class="content">
-                                                <form id="comment" action="{{ post.get_absolute_url }}" method="post">
+                                                <form id="comment" action="" method="post">
                                                     {% csrf_token %}
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-12">
                                                             {{ form.name|as_crispy_field }}
                                                         </div>
                                                         <div class="col-md-6 col-sm-12">
-                                                            {{ form.surname|as_crispy_field }}
+                                                            {{ form.last_name|as_crispy_field }}
                                                         </div>
                                                         <div class="col-md-12 col-sm-12">
                                                             {{ form.email|as_crispy_field }}

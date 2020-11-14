@@ -74,15 +74,15 @@ def view_news(request, slug):
     news_item = Event.objects.get(slug=slug)
     if request.user.is_authenticated:
         tickets = Ticket.objects.filter(user=request.user, event=news_item)
-    if news_item.the_date_of_the <= timezone.now():
+    if news_item.the_date_of_the <= timezone.now() and request.user.is_authenticated:
         if request.method == 'POST':
             form = CommentForm(data=request.POST)
             if form.is_valid():
                 response = form.save(commit=False)
+                response.name = request.user.first_name
+                response.last_name = request.user.last_name
                 response.event = news_item
                 response.email = request.user.email
-                response.name = request.user.first_name
-                response.surname = request.user.last_name
                 response.save()
                 # redirect('home')
         comments = news_item.comment_set.all()

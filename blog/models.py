@@ -106,7 +106,7 @@ class Ticket(models.Model):
 class Comment(models.Model):
     """Модель комментариев"""
     name = models.CharField('Имя', max_length=50, blank=True)
-    surname = models.CharField('Фамилия', max_length=50, blank=True)
+    last_name = models.CharField('Фамилия', max_length=50, blank=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Мероприятие', blank=True)
     content = models.TextField('Текст комментария', max_length=5000)
     email = models.EmailField(blank=True)
