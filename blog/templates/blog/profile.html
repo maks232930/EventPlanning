@@ -32,6 +32,7 @@
                                     <small>{{ event.event.the_date_of_the }}</small>
                                 </div>
                                 <p class="mb-1">{{ event.event.mini_text }}</p>
+
                                 <small>Category: {{ event.event.category }}</small><br>
                                 <small>Tags: {% for i in event.event.get_tags %}
                                     {% if event.event.get_tags.count == forloop.counter %}
@@ -40,15 +41,16 @@
                                     {% endif %}
                                 {% endfor %}</small>
                             </a>
+                            <form action="" name="gs" method="post" style="display: inline-grid">
+                                {% csrf_token %}
+                                <input type="text" name="qw" hidden="hidden" value="{{ event.id }}">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         {% empty %}
                             <div class="mb-auto">
                                 <h1>You have no tickets</h1>
                             </div>
-
                         {% endfor %}
-
-
-
                     </div>
                 </div>
             </div>

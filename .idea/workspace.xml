@@ -19,8 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5079ba94-8bb3-4784-bfce-d1ffe51642d9" name="Default Changelist" comment="result">
+    <list default="true" id="5079ba94-8bb3-4784-bfce-d1ffe51642d9" name="Default Changelist" comment="add requirements.txt">
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/11/15/blog-post-01_2jtBiVQ.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asgiref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +115,7 @@
       <workItem from="1605267470530" duration="4379000" />
       <workItem from="1605271868644" duration="1698000" />
       <workItem from="1605287579946" duration="4831000" />
+      <workItem from="1605454593138" duration="19757000" />
     </task>
     <task id="LOCAL-00001" summary="Пойдет">
       <created>1604779204011</created>
@@ -118,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604779204011</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="end project">
+      <created>1605392033267</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605392033267</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add requirements.txt">
+      <created>1605392229956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605392229956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +162,9 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Пойдет" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пойдет" />
+    <MESSAGE value="end project" />
+    <MESSAGE value="add requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604596012687">
@@ -157,22 +179,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605271940113" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605271854301">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605469756939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605271854301" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605271854301">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605469756939" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605469756939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605271854301" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605271854301">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605469756939" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605469756939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605271854301" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605271854301">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605469756939" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605469756939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605271854301" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605469756939" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1605271854296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -197,10 +219,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605271881155" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604779212127">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605392233828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604779212127" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605392233828" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605056543142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -73,6 +73,8 @@ class AllPostsListView(ListView):
 
 def view_news(request, slug):
     news_item = Event.objects.get(slug=slug)
+    news_item.views = F('views') + 1
+    news_item.save()
     if request.user.is_authenticated:
         tickets = Ticket.objects.filter(user=request.user, event=news_item)
     if news_item.the_date_of_the <= timezone.now() and request.user.is_authenticated:
@@ -210,4 +212,12 @@ def user_logout(request):
 @login_required
 def profile(request):
     events = Ticket.objects.filter(user=request.user)
+    if request.method == 'POST':
+        ticket_id = request.POST.get('qw')
+        ticket = events.get(id=ticket_id)
+        event = Event.objects.filter(id=ticket.event.id)
+        event.tickets_left = F('tickets_left') + 1
+        event.delete()
+        return redirect('profile')
+
     return render(request, 'blog/profile.html', {'events': events})
