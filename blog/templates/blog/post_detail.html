@@ -31,7 +31,7 @@
                                     </div>
                                     <div class="down-content">
                                         <span>{{ post.category }}</span>
-                                        <a href="post-details.html"><h4>{{ post.title }}</h4></a>
+                                        <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                         <ul class="post-info">
                                             <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
                                             <li><a href="{{ post.get_absolute_url }}">{{ post.the_date_of_the }}</a></li>
