@@ -55,8 +55,8 @@
                                                 <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
                                                 <li><a href="{{ post.get_absolute_url }}">{{ post.the_date_of_the }}</a>
                                                 <li>
-                                                    <a href="{{ post.get_absolute_url }}">Осталось: {{ post.tickets_left }}</a>
-                                                </li>
+                                                <a href="{{ post.get_absolute_url }}">Tickets left: {{ post.tickets_left }}</a>
+                                            </li>
                                             </ul>
                                             <p>{{ post.mini_text }}</p>
                                             <div class="post-options">

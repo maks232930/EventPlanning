@@ -29,14 +29,17 @@
                                     <div class="blog-thumb">
                                         <img src="{{ post.photo.url }}" alt="">
                                     </div>
-                                    <div class="down-content">
+                                    <div class="down-content" style="word-wrap: break-word;">
                                         <span>{{ post.category }}</span>
                                         <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                         <ul class="post-info">
                                             <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
                                             <li><a href="{{ post.get_absolute_url }}">{{ post.the_date_of_the }}</a></li>
                                             <li>
-                                                <a href="{{ post.get_absolute_url }}">Осталось: {{ post.tickets_left }}</a>
+                                                <a href="{{ post.get_absolute_url }}">Tickets left: {{ post.tickets_left }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ post.get_absolute_url }}">location: {{ post.location }}</a>
                                             </li>
                                         </ul>
                                         {{ post.content|safe }}

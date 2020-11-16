@@ -35,43 +35,6 @@ class AllPostsListView(ListView):
             .prefetch_related('tags')
 
 
-# class PostDetailView(FormMixin, DetailView):
-#     queryset = Event.objects.prefetch_related('tags').select_related('author')
-#     template_name = 'blog/post_detail.html'
-#     context_object_name = 'post'
-#     form_class = TicketForm
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         # if self.object.the_date_of_the < timezone.now():
-#         #     context['comments'] = self.object.comment_set.all()
-#         # elif self.object.tickets_left != 0 and self.object.the_date_of_the < timezone.now():
-#         context['form'] = TicketForm(initial={'event': self.object})
-#         self.object.views = F('views') + 1
-#         self.object.save()
-#         return context
-#
-#     def post(self, request, *args, **kwargs):
-#         self.object = self.get_object()
-#         form = self.get_form()
-#
-#         if form.is_valid():
-#             return self.form_valid(form)
-#         else:
-#             return self.form_invalid(form)
-#
-#     def form_valid(self, form):
-#         form.save()
-#         self.object.tickets_left = F('tickets_left') - 1
-#         self.object.save()
-#         return super(PostDetailView, self).form_valid(form)
-#
-#     def get_success_url(self, **kwargs):
-#         if kwargs != None:
-#             return reverse_lazy('post_detail', kwargs={'slug': self.kwargs['slug']})
-#         else:
-#             return reverse_lazy('post_detail', args=(self.object.slug,))
-
 def view_news(request, slug):
     news_item = Event.objects.get(slug=slug)
     news_item.views = F('views') + 1

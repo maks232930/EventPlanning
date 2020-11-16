@@ -9,7 +9,7 @@
                     <div class="col-lg-12">
                         <div class="text-content">
                             <h2>Events on request {{ s }} </h2>
-{#                            <h2>Our Recent Blog Entries</h2>#}
+                            {#                            <h2>Our Recent Blog Entries</h2>#}
                         </div>
                     </div>
                 </div>
@@ -37,6 +37,11 @@
                                             <ul class="post-info">
                                                 <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
                                                 <li><a href="{{ post.get_absolute_url }}">{{ post.published_date }}</a>
+
+                                                </li>
+                                                <li>
+                                                    <a href="{{ post.get_absolute_url }}">Tickets
+                                                        left: {{ post.tickets_left }}</a>
                                                 </li>
                                             </ul>
                                             <p>{{ post.mini_text|truncatewords:20 }}</p>
@@ -63,7 +68,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {% empty %}
+                            {% empty %}
                                 <p>No results were found for your search.</p>
                             {% endfor %}
 
