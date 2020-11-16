@@ -6,7 +6,7 @@ from django.db.models import F
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views.generic import ListView
-from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm
+from django.contrib.auth.forms import PasswordChangeForm
 from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm, UpdateUser
 from .models import Event, Ticket
 
@@ -235,3 +235,16 @@ def profile_update(request):
 
     form = UpdateUser(instance=request.user)
     return render(request, 'blog/update_profile.html', {'form': form})
+
+
+@login_required
+def change_password(request):
+    if request.method == "POST":
+        form = PasswordChangeForm(request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+
+    form = PasswordChangeForm(user=request.user)
+    return render(request, 'blog/change_password.html', {'form': form})
