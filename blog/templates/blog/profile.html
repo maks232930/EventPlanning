@@ -41,16 +41,21 @@
                                     {% endif %}
                                 {% endfor %}</small>
                             </a>
-                            <form action="" name="gs" method="post" style="display: inline-grid">
-                                {% csrf_token %}
-                                <input type="text" name="qw" hidden="hidden" value="{{ event.id }}">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                            {% if event.event.the_date_of_the > time_now %}
+                                <form action="" name="gs" method="post"
+                                      style="display: inline-grid; margin-bottom: 10px">
+                                    {% csrf_token %}
+                                    <input type="text" name="qw" hidden="hidden" value="{{ event.id }}">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            {% endif %}
+
                         {% empty %}
                             <div class="mb-auto">
                                 <h1>You have no tickets</h1>
                             </div>
                         {% endfor %}
+
                     </div>
                 </div>
             </div>

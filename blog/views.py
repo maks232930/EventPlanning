@@ -6,8 +6,8 @@ from django.db.models import F
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views.generic import ListView
-
-from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm
+from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm
+from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm, UpdateUser
 from .models import Event, Ticket
 
 
@@ -220,4 +220,18 @@ def profile(request):
         event.delete()
         return redirect('profile')
 
-    return render(request, 'blog/profile.html', {'events': events})
+    time_now = timezone.now()
+    return render(request, 'blog/profile.html', {'events': events, 'time_now': time_now})
+
+
+@login_required
+def profile_update(request):
+    if request.method == "POST":
+        form = UpdateUser(data=request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+
+    form = UpdateUser(instance=request.user)
+    return render(request, 'blog/update_profile.html', {'form': form})

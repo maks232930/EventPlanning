@@ -1,7 +1,7 @@
 from captcha.fields import CaptchaField
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
 
 from .models import Ticket, Comment
 
@@ -54,6 +54,9 @@ class UserLoginForm(AuthenticationForm):
         fields = 'username, password'
 
 
-class TicketDelete(forms.Form):
-    id = forms.IntegerField(required=False)
+class UpdateUser(forms.ModelForm):
+
+    class Meta:
+        model = get_user_model()
+        fields = ('username', 'email', 'first_name', 'last_name')
 
