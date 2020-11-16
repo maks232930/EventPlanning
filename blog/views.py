@@ -9,6 +9,7 @@ from django.views.generic import ListView
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import TicketForm, CommentForm, UserRegisterForm, UserLoginForm, UpdateUser
 from .models import Event, Ticket
+from django.contrib.auth import update_session_auth_hash
 
 
 class HomeListView(ListView):
@@ -240,10 +241,11 @@ def profile_update(request):
 @login_required
 def change_password(request):
     if request.method == "POST":
-        form = PasswordChangeForm(request.POST, user=request.user)
+        form = PasswordChangeForm(data=request.POST, user=request.user)
 
         if form.is_valid():
             form.save()
+            update_session_auth_hash(request, form.user)
             return redirect('profile')
 
     form = PasswordChangeForm(user=request.user)
