@@ -33,7 +33,7 @@
                                     <small>{{ event.event.the_date_of_the }}</small>
                                 </div>
                                 <p class="mb-1">{{ event.event.mini_text }}</p>
-
+                                <small>Location: {{ event.event.location }}</small><br>
                                 <small>Category: {{ event.event.category }}</small><br>
                                 <small>Tags: {% for i in event.event.get_tags %}
                                     {% if event.event.get_tags.count == forloop.counter %}
@@ -47,13 +47,13 @@
                                       style="display: inline-grid; margin-bottom: 10px">
                                     {% csrf_token %}
                                     <input type="text" name="qw" hidden="hidden" value="{{ event.id }}">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">Delete ticket</button>
                                 </form>
                             {% endif %}
 
                         {% empty %}
                             <div class="mb-auto">
-                                <h1>You have no tickets</h1>
+                                <h1>You have no active tickets</h1>
                             </div>
                         {% endfor %}
 

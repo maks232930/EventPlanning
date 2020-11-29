@@ -175,13 +175,14 @@ def user_logout(request):
 
 @login_required
 def profile(request):
-    events = Ticket.objects.filter(user=request.user)
+    events = Ticket.objects.filter(user=request.user, event__the_date_of_the__gte=timezone.now())
     if request.method == 'POST':
         ticket_id = request.POST.get('qw')
         ticket = events.get(id=ticket_id)
         event = Event.objects.filter(id=ticket.event.id)
-        event.tickets_left = F('tickets_left') + 1
-        event.delete()
+        number_tickets = event.tickets_left = F('tickets_left') + 1
+        event.update(tickets_left=number_tickets)
+        ticket.delete()
         return redirect('profile')
 
     time_now = timezone.now()

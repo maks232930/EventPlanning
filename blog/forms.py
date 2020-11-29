@@ -7,11 +7,10 @@ from .models import Ticket, Comment
 
 
 class TicketForm(forms.ModelForm):
-    captcha = CaptchaField()
 
     class Meta:
         model = Ticket
-        fields = ['name', 'surname', 'email', 'event', 'captcha']
+        fields = ['name', 'surname', 'email', 'event']
         readonly_fields = ('published_date',)
 
         widgets = {
