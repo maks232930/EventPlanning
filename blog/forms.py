@@ -22,11 +22,10 @@ class TicketForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
-    captcha = CaptchaField()
 
     class Meta:
         model = Comment
-        fields = ['name', 'email', 'last_name', 'content', 'event', 'captcha']
+        fields = ['name', 'email', 'last_name', 'content', 'event']
         readonly_fields = ('published_date',)
 
         widgets = {

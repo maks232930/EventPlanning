@@ -22,11 +22,7 @@
     <list default="true" id="5079ba94-8bb3-4784-bfce-d1ffe51642d9" name="Default Changelist" comment="fix template class=&quot;post-info&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +116,7 @@
       <workItem from="1605559688766" duration="1491000" />
       <workItem from="1605809213606" duration="3232000" />
       <workItem from="1605991987100" duration="14302000" />
-      <workItem from="1606684022992" duration="2229000" />
+      <workItem from="1606684022992" duration="3361000" />
     </task>
     <task id="LOCAL-00001" summary="Пойдет">
       <created>1604779204011</created>
@@ -185,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605528236241</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1606686421794</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606686421794</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +220,8 @@
     <MESSAGE value="add update password" />
     <MESSAGE value="fix change_password" />
     <MESSAGE value="fix template class=&quot;post-info&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix template class=&quot;post-info&quot;" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604596012687">
@@ -272,10 +276,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605271881155" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605705246596">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606686428672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605705246596" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606686428672" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605056543142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
