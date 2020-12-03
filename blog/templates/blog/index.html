@@ -53,10 +53,12 @@
                                             <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                             <ul class="post-info">
                                                 <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
-                                                <li><a href="{{ post.get_absolute_url }}">{{ post.the_date_of_the }}</a>
+                                                <li><a href="{{ post.get_absolute_url }}">Дата
+                                                    проведения: {{ post.the_date_of_the }}</a></li>
                                                 <li>
-                                                <a href="{{ post.get_absolute_url }}">Tickets left: {{ post.tickets_left }}</a>
-                                            </li>
+                                                    <a href="{{ post.get_absolute_url }}">Билетов
+                                                        осталось: {{ post.tickets_left }}</a>
+                                                </li>
                                             </ul>
                                             <p>{{ post.mini_text }}</p>
                                             <div class="post-options">
@@ -103,7 +105,7 @@
                             {% endfor %}
                             <div class="col-lg-12">
                                 <div class="main-button">
-                                    <a href="{% url 'all_posts' %}">View All Events</a>
+                                    <a href="{% url 'all_posts' %}">Просмотреть все мероприятия</a>
                                 </div>
                             </div>
                         </div>

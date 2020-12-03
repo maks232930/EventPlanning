@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-content">
-                            <h2>Event Details</h2>
+                            <h2>Подробнее о мероприятии</h2>
                         </div>
                     </div>
                 </div>
@@ -34,9 +34,9 @@
                                         <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                         <ul class="post-info">
                                             <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
-                                            <li><a href="{{ post.get_absolute_url }}">{{ post.the_date_of_the }}</a></li>
+                                            <li><a href="{{ post.get_absolute_url }}">Дата проведения: {{ post.the_date_of_the }}</a></li>
                                             <li>
-                                                <a href="{{ post.get_absolute_url }}">Tickets left: {{ post.tickets_left }}</a>
+                                                <a href="{{ post.get_absolute_url }}">Билетов осталось: {{ post.tickets_left }}</a>
                                             </li>
 {#                                            <li>#}
 {#                                                <a href="{{ post.get_absolute_url }}">location: {{ post.location }}</a>#}
@@ -83,7 +83,7 @@
                                 <div class="col-lg-12">
                                     <div class="sidebar-item comments">
                                         <div class="sidebar-heading">
-                                            <h2>{{ comments.count }} comments</h2>
+                                            <h2>{{ comments.count }} комментариев</h2>
                                         </div>
                                         <div class="content">
                                             <ul style="display: flex; flex-direction: column">
@@ -97,7 +97,7 @@
                                                         </div>
                                                     </li>
                                                 {% empty %}
-                                                    <p>There should be comments here, but not yet ...</p>
+                                                    <p>Здесь должны быть комментарии, но пока нет ...</p>
                                                 {% endfor %}
                                             </ul>
                                         </div>
@@ -109,7 +109,7 @@
                                     <div class="col-lg-12">
                                         <div class="sidebar-item submit-comment">
                                             <div class="sidebar-heading">
-                                                <h2>Tickets</h2>
+                                                <h2>Билеты</h2>
                                             </div>
                                             <div class="content">
                                                 <form id="comment" action="{{ post.get_absolute_url }}" method="post">
@@ -129,7 +129,7 @@
                                                         </div>
                                                         <div class="col-lg-12">
                                                             <button type="submit" id="form-submit" class="main-button">
-                                                                Get a ticket
+                                                                Получить билет
                                                             </button>
                                                         </div>
                                                     </div>

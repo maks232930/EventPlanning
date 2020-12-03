@@ -9,8 +9,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-content">
-                            <h4><a href="{% url 'edit_profile' %}">Change profile data</a></h4>
-                            <h2>Hello, {{ request.user.first_name }} {{ request.user.last_name }}</h2>
+                            <h4><a href="{% url 'edit_profile' %}">Изменить данные профиля</a></h4>
+                            <h2>Привет, {{ request.user.first_name }} {{ request.user.last_name }}</h2>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
         <div class="col-lg-15 center-block">
             <div class="sidebar-item submit-comment">
                 <div class="content">
-                    <h2 class="h2">List of events</h2>
+                    <h2 class="h2">Список мероприятий</h2>
                     <div class="list-group">
                         {% for event in events %}
                             <a href="{{ event.event.get_absolute_url }}" class="list-group-item list-group-item-action">
@@ -33,9 +33,9 @@
                                     <small>{{ event.event.the_date_of_the }}</small>
                                 </div>
                                 <p class="mb-1">{{ event.event.mini_text }}</p>
-                                <small>Location: {{ event.event.location }}</small><br>
-                                <small>Category: {{ event.event.category }}</small><br>
-                                <small>Tags: {% for i in event.event.get_tags %}
+                                <small>Место проведения: {{ event.event.location }}</small><br>
+                                <small>Категория: {{ event.event.category }}</small><br>
+                                <small>Теги: {% for i in event.event.get_tags %}
                                     {% if event.event.get_tags.count == forloop.counter %}
                                         {{ i }}
                                     {% else %} {{ i }},
@@ -47,13 +47,13 @@
                                       style="display: inline-grid; margin-bottom: 10px">
                                     {% csrf_token %}
                                     <input type="text" name="qw" hidden="hidden" value="{{ event.id }}">
-                                    <button type="submit" class="btn btn-danger">Delete ticket</button>
+                                    <button type="submit" class="btn btn-danger">Удалить билет</button>
                                 </form>
                             {% endif %}
 
                         {% empty %}
                             <div class="mb-auto">
-                                <h1>You have no active tickets</h1>
+                                <h1>У вас нет активных билетов</h1>
                             </div>
                         {% endfor %}
 

@@ -9,41 +9,41 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item {% if request.path == '/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'home' %}">Home
+                        <a class="nav-link" href="{% url 'home' %}">Главная
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/posts/' %}active{% endif %}"
-                           href="{% url 'all_posts' %}">Events</a>
+                           href="{% url 'all_posts' %}">Мероприятия</a>
                     </li>
 
                     {% if request.user.is_authenticated %}
                         {% if request.user.username != 'admin' %}
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == '/profile/' %}active{% endif %}" href="{% url "profile" %}">Profile</a>
+                                <a class="nav-link {% if request.path == '/profile/' %}active{% endif %}" href="{% url "profile" %}">Профиль</a>
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a class="nav-link" href="/admin/">Admin</a>
+                                <a class="nav-link" href="/admin/">Админ</a>
                             </li>
                         {% endif %}
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout/">Logout</a>
+                            <a class="nav-link" href="/logout/">Выход</a>
                         </li>
 
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin/">Admin</a>
+                            <a class="nav-link" href="/admin/">Админ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/register/' %}active{% endif %}"
-                               href="/register/">Register</a>
+                               href="/register/">Регистрация</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/login/' %}active{% endif %}"
-                               href="/login/">Login</a>
+                               href="/login/">Вход</a>
                         </li>
                     {% endif %}
 

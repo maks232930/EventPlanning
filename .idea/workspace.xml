@@ -20,9 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5079ba94-8bb3-4784-bfce-d1ffe51642d9" name="Default Changelist" comment="fix template class=&quot;post-info&quot;">
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-01_kg9THhQ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-02_luPDJE0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-03_9S7lbzH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/12/02/blog-post-03_knPrYS9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/djangoProjectBlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProjectBlog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/category_tpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/category_tpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/list_all_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/list_all_posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/recent_post_tpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/recent_post_tpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/search_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/search_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/tag_tpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/tag_tpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/update_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/update_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/views_posts_by_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/views_posts_by_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/views_posts_by_tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/views_posts_by_tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/_sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +86,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager">
     <configuration name="djangoProjectBlog" type="Python.DjangoServer" factoryName="Django server">
@@ -116,7 +138,12 @@
       <workItem from="1605559688766" duration="1491000" />
       <workItem from="1605809213606" duration="3232000" />
       <workItem from="1605991987100" duration="14302000" />
-      <workItem from="1606684022992" duration="3361000" />
+      <workItem from="1606684022992" duration="7713000" />
+      <workItem from="1606793764633" duration="4507000" />
+      <workItem from="1606860974268" duration="1462000" />
+      <workItem from="1606925131408" duration="231000" />
+      <workItem from="1606925417618" duration="634000" />
+      <workItem from="1607002223362" duration="3201000" />
     </task>
     <task id="LOCAL-00001" summary="Пойдет">
       <created>1604779204011</created>
@@ -188,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606686421794</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update forms and post_detail">
+      <created>1606689680128</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606689680128</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,13 +255,18 @@
     <MESSAGE value="fix change_password" />
     <MESSAGE value="fix template class=&quot;post-info&quot;" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update forms and post_detail" />
+    <option name="LAST_COMMIT_MESSAGE" value="update forms and post_detail" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604596012687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604596012687" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606925449113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606925449113" />
     <state x="816" y="418" key="Github.ShareDialog" timestamp="1605271902010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,14 +311,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605383350957" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1605271881155">
+    <state x="922" y="84" width="998" height="711" key="SettingsEditor" timestamp="1606839845164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605271881155" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606686428672">
+    <state x="922" y="84" width="998" height="711" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606839845164" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606925166728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606686428672" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606925166728" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605056543142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
