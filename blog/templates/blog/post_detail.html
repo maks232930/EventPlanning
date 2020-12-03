@@ -34,13 +34,15 @@
                                         <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                         <ul class="post-info">
                                             <li><a href="{{ post.get_absolute_url }}">{{ post.author }}</a></li>
-                                            <li><a href="{{ post.get_absolute_url }}">Дата проведения: {{ post.the_date_of_the }}</a></li>
+                                            <li><a href="{{ post.get_absolute_url }}">Дата
+                                                проведения: {{ post.the_date_of_the }}</a></li>
                                             <li>
-                                                <a href="{{ post.get_absolute_url }}">Билетов осталось: {{ post.tickets_left }}</a>
+                                                <a href="{{ post.get_absolute_url }}">Билетов
+                                                    осталось: {{ post.tickets_left }}</a>
                                             </li>
-{#                                            <li>#}
-{#                                                <a href="{{ post.get_absolute_url }}">location: {{ post.location }}</a>#}
-{#                                            </li>#}
+                                            {#                                            <li>#}
+                                            {#                                                <a href="{{ post.get_absolute_url }}">location: {{ post.location }}</a>#}
+                                            {#                                            </li>#}
                                         </ul>
                                         {{ post.content|safe }}
                                         <div class="post-options">
@@ -83,7 +85,7 @@
                                 <div class="col-lg-12">
                                     <div class="sidebar-item comments">
                                         <div class="sidebar-heading">
-                                            <h2>{{ comments.count }} комментариев</h2>
+                                            <h2>Комментариев: {{ comments.count }} </h2>
                                         </div>
                                         <div class="content">
                                             <ul style="display: flex; flex-direction: column">
@@ -141,7 +143,7 @@
                                     <div class="col-lg-12">
                                         <div class="sidebar-item submit-comment">
                                             <div class="sidebar-heading">
-                                                <h2>Your comment</h2>
+                                                <h2>Твой комментарий</h2>
                                             </div>
                                             <div class="content">
                                                 <form id="comment" action="" method="post">
@@ -164,7 +166,7 @@
                                                         </div>
                                                         <div class="col-lg-12">
                                                             <button type="submit" id="form-submit" class="main-button">
-                                                                Submit
+                                                                Отправить
                                                             </button>
                                                         </div>
                                                     </div>
@@ -173,6 +175,13 @@
                                         </div>
                                     </div>
                                 {% endif %}
+                            {% else %}
+                                <div class="col-lg-12">
+                                    <div class="sidebar-item submit-comment">
+                                        <h3>Для получения билета авторизуйтесь.</h3>
+                                    </div>
+                                </div>
+
                             {% endif %}
 
                         </div>

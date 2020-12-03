@@ -51,7 +51,8 @@ def view_news(request, slug):
                 response.event = news_item
                 response.email = request.user.email
                 response.save()
-                # redirect('home')
+                return redirect(news_item.get_absolute_url())
+
         comments = news_item.comment_set.all()
         form = CommentForm()
         return render(request, 'blog/post_detail.html', {'post': news_item, 'form': form, 'comments': comments})
